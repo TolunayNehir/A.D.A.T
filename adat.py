@@ -107,6 +107,7 @@ def plotting(df,plotype):
     if plotype=="classic":
         print("plotting started:")
         df.plot()
+        plt.grid()
         plt.show()
     elif plotype=="customized":
         x=input("X:")
@@ -114,6 +115,7 @@ def plotting(df,plotype):
         kind=input("Kind:")
         print("plotting started:")
         df.plot(kind=str(kind),x=str(x),y=str(y))
+        plt.grid()
         plt.show()
 
 def main():
