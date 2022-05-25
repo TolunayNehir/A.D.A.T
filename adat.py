@@ -35,7 +35,7 @@ def json():
     elif type1==2:
         print(df.tail())
     elif type1==3:
-        print(df)
+        print(df.to_string())
     elif type1==4:
         filter1=input("Type filter query:")
         print(df[str(filter1)])
@@ -74,7 +74,7 @@ def csv():
     elif type1==2:
         print(df.tail())
     elif type1==3:
-        print(df)
+        print(df.to_string())
     elif type1==4:
         filter1=input("Type filter query:")
         print(df[str(filter1)])
