@@ -5,6 +5,21 @@ import tkinter as ttk
 from tkinter import *
 #matplotlib.use('Agg')
 
+def plotting(df,plotype):
+    if plotype=="classic":
+        print("plotting started:")
+        df.plot()
+        plt.grid()
+        plt.show()
+    elif plotype=="customized":
+        x=input("X:")
+        y=input("Y:")
+        kind=input("Kind:")
+        print("plotting started:")
+        df.plot(kind=str(kind),x=str(x),y=str(y))
+        plt.grid()
+        plt.show()
+    input("Press Enter to continue...")
 
 def fixdata():
     file=input("filename:")
@@ -30,13 +45,13 @@ def json():
     print("Data has been dataframed")
     print("Type 1 first 5,2 last 5,3 all variables ,4 filter vairables")
     type1=input("Type:")
-    if type1==1:
+    if type1=="1":
         print(df.head())
-    elif type1==2:
+    elif type1=="2":
         print(df.tail())
-    elif type1==3:
+    elif type1=="3":
         print(df.to_string())
-    elif type1==4:
+    elif type1=="4":
         filter1=input("Type filter query:")
         print(df[str(filter1)])
     else:
@@ -53,9 +68,9 @@ def json():
             df.fillna(value, inplace = True)
         else:
             print("Not found")
-    plot=input("Do you want plotting")
+    plot=input("Do you want plotting:")
     if plot=="yes":
-        plotype=input("Plotting type 1 classic,2 customized")
+        plottype=input("Plotting type 1 classic,2 customized")
         if plottype=="classic":
             plotting(df,"classic")
         elif plottype=="cutomized":
@@ -69,13 +84,13 @@ def csv():
     print("Data has been dataframed")
     print("Type 1 first 5,2 last 5,3 all variables ,4 filter vairables")
     type1=input("Type:")
-    if type1==1:
+    if type1=="1":
         print(df.head())
-    elif type1==2:
+    elif type1=="2":
         print(df.tail())
-    elif type1==3:
+    elif type1=="3":
         print(df.to_string())
-    elif type1==4:
+    elif type1=="4":
         filter1=input("Type filter query:")
         print(df[str(filter1)])
     else:
@@ -94,29 +109,15 @@ def csv():
             print("Not found")
     plot=input("Do you want plotting")
     if plot=="yes":
-        plotype=input("Plotting type 1 classic,2 customized")
-        if plottype=="classic":
+        plottype=input("Plotting type 1 classic,2 customized")
+        if plottype=="1":
             plotting(df,"classic")
-        elif plottype=="cutomized":
+        elif plottype=="2":
             plotting(df,"customized")
     else:
         print("Analyze finished")
         main()
 
-def plotting(df,plotype):
-    if plotype=="classic":
-        print("plotting started:")
-        df.plot()
-        plt.grid()
-        plt.show()
-    elif plotype=="customized":
-        x=input("X:")
-        y=input("Y:")
-        kind=input("Kind:")
-        print("plotting started:")
-        df.plot(kind=str(kind),x=str(x),y=str(y))
-        plt.grid()
-        plt.show()
 
 def main():
     print("File Type: 1 csv,2 json,Operations: 3 fix data")
@@ -131,5 +132,3 @@ def main():
         print("Not found")
 
 main()
-
-
