@@ -46,9 +46,9 @@ def json():
     print("Type 1 first 5,2 last 5,3 all variables ,4 filter vairables")
     type1=input("Type:")
     if type1=="1":
-        print(df.head())
+        print(df.head().to_string())
     elif type1=="2":
-        print(df.tail())
+        print(df.tail().to_string())
     elif type1=="3":
         print(df.to_string())
     elif type1=="4":
@@ -85,9 +85,9 @@ def csv():
     print("Type 1 first 5,2 last 5,3 all variables ,4 filter vairables")
     type1=input("Type:")
     if type1=="1":
-        print(df.head())
+        print(df.head().to_string())
     elif type1=="2":
-        print(df.tail())
+        print(df.tail().to_string())
     elif type1=="3":
         print(df.to_string())
     elif type1=="4":
