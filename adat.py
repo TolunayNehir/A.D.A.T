@@ -53,7 +53,7 @@ def json():
         print(df.to_string())
     elif type1=="4":
         filter1=input("Type filter query:")
-        print(df[str(filter1)])
+        print(df.query(str(filter1)))
     else:
         print("Not Found")
     operation=input("Do you want replace emty cells:")
@@ -92,7 +92,7 @@ def csv():
         print(df.to_string())
     elif type1=="4":
         filter1=input("Type filter query:")
-        print(df[str(filter1)])
+        print(df.query(str(filter1)))
     else:
         print("Not Found")
     operation=input("Do you want replace emty cells:")
