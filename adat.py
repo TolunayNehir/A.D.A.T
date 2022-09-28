@@ -43,7 +43,7 @@ def json():
     file=input("Filename:")
     df = pd.read_json(file)
     print("Data has been dataframed")
-    print("Type 1 first 5,2 last 5,3 all variables ,4 filter vairables")
+    print("Type 1 first 5,2 last 5,3 all variables ,4 filter vairables,5 info")
     type1=input("Type:")
     if type1=="1":
         print(df.head().to_string())
@@ -54,6 +54,8 @@ def json():
     elif type1=="4":
         filter1=input("Type filter query:")
         print(df.query(str(filter1)))
+    elif type1=="5":
+        print(df.info())
     else:
         print("Not Found")
     operation=input("Do you want replace emty cells:")
@@ -82,7 +84,7 @@ def csv():
     file=input("Filename:")
     df = pd.read_csv(file)
     print("Data has been dataframed")
-    print("Type 1 first 5,2 last 5,3 all variables ,4 filter vairables")
+    print("Type 1 first 5,2 last 5,3 all variables ,4 filter vairables,5 info")
     type1=input("Type:")
     if type1=="1":
         print(df.head().to_string())
@@ -93,6 +95,8 @@ def csv():
     elif type1=="4":
         filter1=input("Type filter query:")
         print(df.query(str(filter1)))
+    elif type1=="5":
+        print(df.info())
     else:
         print("Not Found")
     operation=input("Do you want replace emty cells:")
