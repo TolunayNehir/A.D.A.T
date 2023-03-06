@@ -22,8 +22,8 @@ def plotting(df,plotype):
     elif plotype=="advanced":
         kind=input("Kind:")
         items=input("How many items:")
+        array=[]
         while(int(items)>0):
-            array=[]
             item=input("item:")
             array.append(str(item))
             items=int(items)-1
