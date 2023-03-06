@@ -19,6 +19,17 @@ def plotting(df,plotype):
         df.plot(kind=str(kind),x=str(x),y=str(y))
         plt.grid()
         plt.show()
+    elif plotype=="advanced":
+        kind=input("Kind:")
+        items=input("How many items:")
+        while(int(items)>0):
+            array=[]
+            item=input("item:")
+            array.append(str(item))
+            items=int(items)-1
+        df[array].plot(kind=str(kind))
+        plt.grid()
+        plt.show()
     input("Press Enter to continue...")
 
 def fixdata():
@@ -72,11 +83,13 @@ def json():
             print("Not found")
     plot=input("Do you want plotting:")
     if plot=="yes":
-        plottype=input("Plotting type 1 classic,2 customized")
-        if plottype=="classic":
+        plottype=input("Plotting type 1 classic,2 customized,3 advanced")
+        if plottype=="1":
             plotting(df,"classic")
-        elif plottype=="cutomized":
+        elif plottype=="2":
             plotting(df,"customized")
+        elif plottype=="3":
+            plotting(df,"advanced")
     else:
         print("Analyze finished")
         main()
@@ -94,7 +107,7 @@ def csv():
         print(df.to_string())
     elif type1=="4":
         filter1=input("Type filter query:")
-        print(df.query(str(filter1)))
+        print(df.query(str(filter1)).to_string())
     elif type1=="5":
         print(df.info())
     else:
@@ -113,11 +126,13 @@ def csv():
             print("Not found")
     plot=input("Do you want plotting")
     if plot=="yes":
-        plottype=input("Plotting type 1 classic,2 customized")
+        plottype=input("Plotting type 1 classic,2 customized,3 advanced")
         if plottype=="1":
             plotting(df,"classic")
         elif plottype=="2":
             plotting(df,"customized")
+        elif plottype=="3":
+            plotting(df,"advanced")
     else:
         print("Analyze finished")
         main()
